@@ -17,6 +17,6 @@ class Login(object):
         driver.execute_script(('window.scrollTo(0,0)'))
         time.sleep(2)
         driver.execute_script('window.open()')
-        time.sleep(2)
+        time.sleep(4)
 L=Login()
 L.login()
