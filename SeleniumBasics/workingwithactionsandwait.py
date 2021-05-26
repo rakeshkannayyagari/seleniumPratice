@@ -15,13 +15,13 @@ class Actionwait():
                                                                         ElementNotSelectableException,
                                                                         NoAlertPresentException)])
     action=ActionChains(driver)
-    driver.implicitly_wait(10)
-
+    #driver.implicitly_wait(10)
     wait.until(EC.NoSuchElementException, (By.CSS_SELECTOR, 'a[data-ga-track="Main Navigation Jobs|Jobs Icon"]'))
     jobscss =driver.find_element_by_css_selector('a[data-ga-track="Main Navigation Jobs|Jobs Icon"]')
     jobsmove=action.move_to_element(jobscss)
     jobsmove.perform()
 
     time.sleep(10)
+    driver.quit()
 
 
