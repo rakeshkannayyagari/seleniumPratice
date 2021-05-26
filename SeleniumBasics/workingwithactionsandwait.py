@@ -15,13 +15,21 @@ class Actionwait():
                                                                         ElementNotSelectableException,
                                                                         NoAlertPresentException)])
     action=ActionChains(driver)
+    currentwindow=driver.current_window_handle
+    driver.switch_to_window(currentwindow)
     #driver.implicitly_wait(10)
     wait.until(EC.NoSuchElementException, (By.CSS_SELECTOR, 'a[data-ga-track="Main Navigation Jobs|Jobs Icon"]'))
     jobscss =driver.find_element_by_css_selector('a[data-ga-track="Main Navigation Jobs|Jobs Icon"]')
     jobsmove=action.move_to_element(jobscss)
     jobsmove.perform()
-
+    time.sleep(5)
+    wait.until(EC.NoSuchElementException,(By.CSS_SELECTOR,'a[data-ga-track="Main Navigation Recruiters|Recruiters Icon"]'))
+    recuterscss=driver.find_element(By.CSS_SELECTOR,'a[data-ga-track="Main Navigation Recruiters|Recruiters Icon"]')
+    recutersmove=action.move_to_element(recuterscss).perform()
     time.sleep(10)
+    alllinksunderrecuter=driver.find_elements_by_xpath('//ul[@class="midSec menu"]/li[2]/div[@class="subMenu"]/ul/li')
+    print(alllinksunderrecuter)
+
     driver.quit()
 
 
