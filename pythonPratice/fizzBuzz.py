@@ -14,7 +14,8 @@ def fizzBuzz(n):
             print(i)
 
 
-# if __name__ == '__main__':
-#     n = int(input().strip())
+if __name__ == '__main__':
+    n = int(input().strip())
+    #updated to table
 
 fizzBuzz(15)
