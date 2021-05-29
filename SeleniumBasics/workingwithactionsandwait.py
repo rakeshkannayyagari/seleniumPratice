@@ -27,14 +27,16 @@ class Actionwait():
     # recuterscss=driver.find_element(By.CSS_SELECTOR,'a[data-ga-track="Main Navigation Recruiters|Recruiters Icon"]')
     # recutersmove=action.move_to_element(recuterscss).perform()
     time.sleep(3)
-    allheaders=driver.find_elements_by_xpath('//ul[@class="midSec menu"]/li')
-    print(len(allheaders))
-    for i in allheaders:
-        print(i)
-        moveheader=action.move_to_element(i).perform()
-        time.sleep(2)
-        continue
-        print(i.get_attribute('innerText'))
+    allheaders=driver.find_element_by_xpath('//ul[@class="midSec menu"]/li[1]')
+    innertext=allheaders.get_attribute('innerText')
+    print(type(innertext))
+    print(innertext)
+    # print(list(innertext))
+    # for i in allheaders:
+    #     print(i)
+    #     moveheader=action.move_to_element(i).perform()
+    #     time.sleep(2)
+    #     print(i.get_attribute('innerText'))
 
     # alllinksunderrecuter=driver.find_elements_by_xpath('//ul[@class="midSec menu"]/li[2]/div[@class="subMenu"]/ul/li')
     # print(len(alllinksunderrecuter))
